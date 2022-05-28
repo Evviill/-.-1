@@ -1,7 +1,7 @@
 import time
 K = int(input())
 start_time = time.time()  # ставим таймер на начальное значение ставим его до input что бы не было задержек
-file = list(open('text_2.txt', 'r').read())  # чтение файла
+file = list(open('text.txt', 'r').read())  # чтение файла
 file_out = []
 
 # различные переменные счётчики
