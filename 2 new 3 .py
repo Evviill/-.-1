@@ -11,6 +11,7 @@ para_s = 1
 all_s = 0
 K_s_p = 0
 K_break = 0
+lust_number = 0
 for i in range(len(file)): # проходим по всему списку
 
 
@@ -27,7 +28,9 @@ for i in range(len(file)): # проходим по всему списку
                     print('K нулей нашлось')
                     K_s = 0
                     para_s = 2 * K - 1
-                    para = K + 3
+                    #para = K + 3
+                    para = K * 2 + K - 1
+
                     K_s_p = K
 
                     K_break = 1
@@ -43,7 +46,8 @@ for i in range(len(file)): # проходим по всему списку
                 file_out.append(file[i])
                 for g in range(all_s): # обрабатываем пару занося нужные нули
                     file_out.append('0')
-                file_out.append(file[i-1])
+                #file_out.append(file[i-1])
+                file_out.append(lust_number)
         else:  # если это не та пара то просто выводим её не обрабатывая
             if K_break == 1:
                 K_break = 2
@@ -56,9 +60,9 @@ for i in range(len(file)): # проходим по всему списку
             para -= 1
             K_s_p -= 1
 
-
+        lust_number = file[i]
     else:
-        para = para_s
+        #para = para_s
         file_out.append(file[i])  # поскольку это не цыфра просто выводим
 
 
